@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsWikinimous</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RailsWikinimous</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag "https://use.fontawesome.com/releases/v5.0.6/css/all.css"  %>
 
-  <body>
-    <%= yield %>
-  </body>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+  <div class="navbar-wagon">
+    <!-- Logo -->
+    <a href="/" class="navbar-wagon-brand">
+      <div id="logo">Wikivini</div>
+    </a>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "All articles", articles_path, html_options = {class: "navbar-wagon-item navbar-wagon-link"} %>
+        <%= link_to "Write new", new_article_path, html_options = {class: "navbar-wagon-item navbar-wagon-link"} %>
+
+
+      <!-- Profile picture with dropdown list -->
+    </div>
+
+    <!-- Dropdown appearing on mobile only -->
+
+  </div>
+
+  <%= yield %>
+
+  <div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fa fa-heart"></i> at Le Wagon
+  </div>
+</div>
+
+</body>
 </html>
